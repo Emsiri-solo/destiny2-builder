@@ -17,7 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: run test commands
         working-directory: ./server
-      - run: npm ci
-      - run: npm run test
-      - run: npm run test:coverage
+      - run: |
+          npm ci
+          npm run test
+          npm run test:coverage
