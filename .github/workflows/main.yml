@@ -18,8 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: run test commands
-        working-directory: ./server
-      - run: |
+        run: |
           npm ci
           npm run test
           npm run test:coverage
+        working-directory: ./server
