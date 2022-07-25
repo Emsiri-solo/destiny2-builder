@@ -20,6 +20,5 @@ jobs:
       - name: run test commands
         run: |
           npm ci
-          npm run test
           npm run test:coverage
         working-directory: ./server
