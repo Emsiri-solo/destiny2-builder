@@ -28,3 +28,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./server/coverage/lcov.info
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: coverage
+          path: ./server/coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
