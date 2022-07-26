@@ -28,6 +28,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./server/coverage/lcov.info
+      - name: Codecov
+        if: always()
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./server/coverage/lcov.info
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: always()
